@@ -9,7 +9,7 @@ export const EmpruntProvider = ({ children }) => {
 
   function empruntLivre(id) {
     const livre = livres.find((livre) => livre.id === id);
-    if (livre && livre.disponible) {
+    if (livre.disponible) {
       livre.disponible = false;
       setEmpruntLivres([...empruntLivres, livre]);
       setMessage(`Vous avez emprunté: ${livre.titre}`);
