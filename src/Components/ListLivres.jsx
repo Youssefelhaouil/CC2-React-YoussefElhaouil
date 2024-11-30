@@ -4,7 +4,7 @@ import { EmpruntContext } from "../context/EmpruntContext";
 import { Message } from "./Message";
 
 export default function ListLivres() {
-  const { livres, setLivres, empruntLivre, returnLivre ,messageVisible,message} =
+  const { livres, setLivres, empruntLivre ,messageVisible,message} =
     useContext(EmpruntContext);
 
   useEffect(() => {

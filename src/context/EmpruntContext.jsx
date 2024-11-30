@@ -11,7 +11,6 @@ export const EmpruntProvider = ({ children }) => {
     const livre = livres.find((livre) => livre.id === id);
     if (livre && livre.disponible) {
       livre.disponible = false;
-      livre.nonDisponible = true;
       setEmpruntLivres([...empruntLivres, livre]);
       setLivres([...livres]);
       setMessage(`Vous avez emprunté: ${livre.titre}`);
@@ -24,7 +23,6 @@ export const EmpruntProvider = ({ children }) => {
     const emprunt = empruntLivres.find((livre) => livre.id === id);
     if (emprunt) {
       emprunt.disponible = true;
-      emprunt.nonDisponible = false;
       setEmpruntLivres(empruntLivres.filter((livre) => livre.id !== id));
       setLivres([...livres]);
       setMessage(`Vous avez rendu: ${emprunt.titre}`);
