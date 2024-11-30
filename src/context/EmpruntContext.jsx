@@ -12,7 +12,6 @@ export const EmpruntProvider = ({ children }) => {
     if (livre && livre.disponible) {
       livre.disponible = false;
       setEmpruntLivres([...empruntLivres, livre]);
-      setLivres([...livres]);
       setMessage(`Vous avez emprunté: ${livre.titre}`);
       setMessageVisible(true);
       setTimeout(() => setMessageVisible(false), 2000);
@@ -24,7 +23,6 @@ export const EmpruntProvider = ({ children }) => {
     if (emprunt) {
       emprunt.disponible = true;
       setEmpruntLivres(empruntLivres.filter((livre) => livre.id !== id));
-      setLivres([...livres]);
       setMessage(`Vous avez rendu: ${emprunt.titre}`);
       setMessageVisible(true);
       setTimeout(() => setMessageVisible(false), 2000); 
