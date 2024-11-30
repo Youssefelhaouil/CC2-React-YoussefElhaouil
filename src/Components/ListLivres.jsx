@@ -68,7 +68,7 @@ export default function ListLivres() {
                       Emprunter
                     </button>
                   ) :  (
-                    <span className="text-gray-400 text-xs">Indisponible</span>
+                    <span className="text-gray-400 text-xs">Non disponible</span>
                   )}
                 </td>
               </tr>
